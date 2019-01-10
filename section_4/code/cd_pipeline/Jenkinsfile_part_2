@@ -12,13 +12,12 @@ pipeline {
 	}
 
 	stages {
+		stage("Test - Unit tests") {
+			steps { runUnittests() }
+		}
 		
 		stage("Build") {
 			steps { buildApp() }
-		}
-
-		stage("Test - Unit tests") {
-			steps { runUnittests() }
 		}
 
 		stage("Deploy - Dev") {
